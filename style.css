@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid black;
+    background-color: #6F4C3E;
+}
+
+h1 {
+    color: #E8CBA0
+}
+
+#newBookBtn {
+    padding: 15px;
+    color: white;
+    background-color: #6F4C3E;
+    border: 2px solid black;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+body {
+    background-color: #E8CBA0;
+}
+
+dialog {
+    position: fixed; /* Sayfaya göre sabit konumlandır */
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    border: none;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: #fff8f2; 
+    text-align: center;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Dialog arka planını koyulaştırma */
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Form içindeki öğeleri düzenleme */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* Form içindeki input ve checkbox alanlarını düzenleme */
+form input[type="text"],
+form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #6F4C3E;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Checkbox için label daha şık olacak */
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #6F4C3E;
+}
+
+/* Dialog içindeki butonları düzenleme */
+#submitBtn, #closeBtn {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#submitBtn {
+    background-color: #6F4C3E;
+    color: white;
+}
+
+#closeBtn {
+    background-color: #d9534f;
+    color: white;
+}
+
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #6F4C3E;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+/* Tıklanınca kenarlık rengi değişsin */
+input:not([type="checkbox"]):focus {
+    border-color: #FF5733;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
+}
+
+
+/* 📌 Kitap kartlarını güzelleştiriyoruz */
+.bookCard {
+    background-color: #fff8f2; /* Kart arka planı */
+    padding: 20px;
+    border-radius: 10px; /* Köşeleri yuvarlat */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+    width: 280px; /* Sabit genişlik */
+    text-align: center; /* Metni ortala */
+    border: 2px solid #6F4C3E; /* Çerçeve rengi */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 📌 Hover efekti */
+.bookCard:hover {
+    transform: translateY(-5px); /* Hafif yukarı kaldır */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Gölgeyi artır */
+}
+
+/* 📌 Başlık tasarımı */
+.bookCard h3 {
+    color: #6F4C3E;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* 📌 Bilgi metni */
+.bookCard p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* 📌 Okundu / Okunmadı butonu */
+.toggleReadBtn {
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* 📌 Okundu butonu yeşil olacak */
+.toggleReadBtn.read {
+    background-color: #2ecc71; /* Yeşil */
+    color: white;
+}
+
+/* 📌 Okunmadı butonu kırmızı olacak */
+.toggleReadBtn.unread {
+    background-color: #e74c3c; /* Kırmızı */
+    color: white;
+}
+
+/* 📌 Silme butonu */
+.removeBtn {
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d9534f;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* 📌 Buton hover efektleri */
+.toggleReadBtn:hover,
+.removeBtn:hover {
+    opacity: 0.8;
+}
