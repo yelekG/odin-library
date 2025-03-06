@@ -1,15 +1,29 @@
 const myLibrary = [];
 
-function Book(title, author, pages, readStatus){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.readStatus = readStatus;
+// function Book(title, author, pages, readStatus){
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.readStatus = readStatus;
+// }
+
+// Book.prototype.toggleRead = function() {
+//     this.readStatus = !this.readStatus;
+// }
+
+class Book {
+    constructor(title, author, pages, readStatus) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.readStatus = readStatus;
+    }
+
+    toggleRead() {
+        this.readStatus = !this.readStatus;
+    }
 }
 
-Book.prototype.toggleRead = function() {
-    this.readStatus = !this.readStatus;
-}
 
 function addBookToLibrary(title, author, pages, readStatus) {
     const book = new Book(title, author, pages, readStatus);
